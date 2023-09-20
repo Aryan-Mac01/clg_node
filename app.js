@@ -20,6 +20,18 @@ const server = http.createServer((req, res)=>{
     else if(req.url === '/home'){
         res.write(home);
     }
+    if((req.url==='/') && (req.method === 'POST')){
+        const body = [];
+        req.on('data', (data) =>{
+            body.push(data);
+        })
+
+        req.on('end',()=>{
+            const reqbody=Buffer.concat(body).toString()
+            console.log(reqbody);
+            fs.writeFileSync('data.txt',req)
+        })
+    }
     res.end();
 })
 
