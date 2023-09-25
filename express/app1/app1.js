@@ -18,6 +18,10 @@ app.get('/service',(req,res)=>{
     res.sendFile(path.join(__dirname,"service.html"));
 });
 
+app.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,"login.html"));
+});
+
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
