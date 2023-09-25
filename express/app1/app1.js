@@ -1,13 +1,21 @@
 const express = require("express");
 const fs = require("fs");
 const path = require('path');
-//const home = fs.readFileSync("home.html");
+const home = fs.readFileSync("home.html");
 
 const app = express();
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname,'home.html'));
     
+});
+
+app.get('/contact',(req,res)=>{
+    res.sendFile(path.join(__dirname,"contact.html"));
+});
+
+app.get('/service',(req,res)=>{
+    res.sendFile(path.join(__dirname,"service.html"));
 });
 
 app.listen(3000, () => {
