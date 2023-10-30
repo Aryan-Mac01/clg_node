@@ -9,5 +9,5 @@ li{
 
 .container{
     background-color: aliceblue;
-    
+    display: flex;
 }
